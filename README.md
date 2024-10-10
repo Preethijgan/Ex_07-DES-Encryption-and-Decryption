@@ -16,4 +16,5 @@ __2.Rounds (16 iterations):__
    * Permutation: The 32-bit block is permuted.<br>
    * XOR: The result is XORed with the left 32-bit half.<br>
    * Swapping: The left and right halves are swapped.<br>
+<br>
 __3.Final Permutation (FP):__ After 16 rounds, the final result is permuted using a final permutation table.
