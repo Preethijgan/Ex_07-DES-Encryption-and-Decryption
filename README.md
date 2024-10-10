@@ -3,7 +3,7 @@ To implement DES Encryption and Decryption using standard libraries.
 ## ALGORITHM:
 * Key: 64 bits, but only 56 bits are used (the remaining 8 bits are parity bits).<br>
 * Block Size: 64 bits.<br>
-* Rounds: 16 rounds of permutations and substitutions.<br>
+* Rounds: 16 rounds of permutations and substitutions.
 1.__Initial Permutation (IP):__ The 64-bit plaintext block is permuted using a fixed initial permutation table.<br>
 
 __2.Rounds (16 iterations):__
