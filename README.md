@@ -26,64 +26,36 @@ __3.Final Permutation (FP):__ After 16 rounds, the final result is permuted usin
 #include <stdio.h>
 #include <string.h>
 
-#define ENCRYPT 1
-#define DECRYPT 0
 
-void des_encrypt_decrypt(unsigned char *input, unsigned char *output, unsigned char *key, int mode);
-void simple_des_round(unsigned char *block, unsigned char *key);
-void xor_blocks(unsigned char *block, unsigned char *key, int size);
+  void xor_encrypt_decrypt(char *input, char *key) {
+int input_len = strlen(input);
+int key_len = strlen(key);
+
+for (int i = 0; i < input_len; i++) {
+    input[i] = input[i] ^ key[i % key_len]; 
+}
+}
 
 int main() {
-    unsigned char plaintext[8] = "PREETHI";   
-    unsigned char ciphertext[8], decryptedtext[8];
-    unsigned char key[8] = "MYKEY123";         
-    
-    printf("Plaintext: %s\n", plaintext);
-    
-   
-    des_encrypt_decrypt(plaintext, ciphertext, key, ENCRYPT);
-    printf("Ciphertext: ");
-    for (int i = 0; i < 8; i++) printf("%02X ", ciphertext[i]);
-    printf("\n");
-    
+char url[] = "PREETHI";
+char key[] = "secretkey"; 
 
-    des_encrypt_decrypt(ciphertext, decryptedtext, key, DECRYPT);
-    printf("Decrypted Text: %s\n", decryptedtext);
-    
-    return 0;
+printf("Original URL: %s\n", url);
+
+xor_encrypt_decrypt(url, key);
+printf("Encrypted URL: %s\n", url);
+
+xor_encrypt_decrypt(url, key);
+printf("Decrypted URL: %s\n", url);
+
+return 0;
 }
-
-
-void des_encrypt_decrypt(unsigned char *input, unsigned char *output, unsigned char *key, int mode) {
-    unsigned char block[8];
-    memcpy(block, input, 8);  
     
-    
-    for (int i = 0; i < 16; i++) {
-        if (mode == ENCRYPT) {
-            simple_des_round(block, key);  
-            for encryption
-        } else {
-            simple_des_round(block, key);  
-        }
-    }
-    
-    memcpy(output, block, 8);  
-}
 
 
-void simple_des_round(unsigned char *block, unsigned char *key) {
-    xor_blocks(block, key, 8);  
-}
-
-
-void xor_blocks(unsigned char *block, unsigned char *key, int size) {
-    for (int i = 0; i < size; i++) {
-        block[i] ^= key[i];   
-    }
-}
 ```
 
 ## RESULT:
-![Screenshot 2024-10-10 091310](https://github.com/user-attachments/assets/8dc8edbc-fd3f-44b6-a314-c1ac5746933a)
+![Screenshot 2024-10-10 091829](https://github.com/user-attachments/assets/b4702dfe-9346-40ba-b59e-7e8e0632be0b)
+
 
