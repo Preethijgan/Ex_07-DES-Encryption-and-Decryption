@@ -23,32 +23,58 @@ __3.Final Permutation (FP):__ After 16 rounds, the final result is permuted usin
 
 ## PROGRAM:
 ```c
+
+
 #include <stdio.h>
 #include <string.h>
 
-
-  void xor_encrypt_decrypt(char *input, char *key) {
-int input_len = strlen(input);
-int key_len = strlen(key);
-
-for (int i = 0; i < input_len; i++) {
-    input[i] = input[i] ^ key[i % key_len]; 
+void simpleAESEncrypt(char *plaintext, char *key, char *ciphertext)
+{
+    int i;
+    for (i = 0; i < strlen(plaintext); i++) 
+    {
+        ciphertext[i] = plaintext[i] ^ key[i % strlen(key)]; 
+    }
+    ciphertext[i] = '\0'; 
 }
+
+void simpleAESDecrypt(char *ciphertext, char *key, char *decryptedText)
+{
+    int i;
+    for (i = 0; i < strlen(ciphertext); i++) 
+    {
+        decryptedText[i] = ciphertext[i] ^ key[i % strlen(key)]; 
+    }
+    decryptedText[i] = '\0'; 
 }
 
-int main() {
-char url[] = "PREETHI";
-char key[] = "secretkey"; 
+void printASCII(char *ciphertext) 
+{
+    printf("Encrypted Message (ASCII values): ");
+    for (int i = 0; i < strlen(ciphertext); i++) 
+    {
+        printf("%d ", (unsigned char)ciphertext[i]); 
+    }
+    printf("\n");
+}
 
-printf("Original URL: %s\n", url);
+int main() 
+{
+    char plaintext[100], key[100], ciphertext[100], decryptedText[100];
 
-xor_encrypt_decrypt(url, key);
-printf("Encrypted URL: %s\n", url);
+    printf("Enter the plaintext: ");
+    scanf("%s", plaintext);
 
-xor_encrypt_decrypt(url, key);
-printf("Decrypted URL: %s\n", url);
+    printf("Enter the key: ");
+    scanf("%s", key);
 
-return 0;
+    simpleAESEncrypt(plaintext, key, ciphertext);
+    printASCII(ciphertext);  
+
+    simpleAESDecrypt(ciphertext, key, decryptedText);
+    printf("Decrypted Message: %s\n", decryptedText);
+
+    return 0;
 }
     
 
@@ -56,6 +82,7 @@ return 0;
 ```
 
 ## RESULT:
-![Screenshot 2024-10-10 091829](https://github.com/user-attachments/assets/b4702dfe-9346-40ba-b59e-7e8e0632be0b)
+![Screenshot 2024-10-10 163537](https://github.com/user-attachments/assets/9f0e8b7a-a47e-4803-b522-d9d1271bf0b2)
+
 
 
