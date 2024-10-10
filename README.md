@@ -23,8 +23,6 @@ __3.Final Permutation (FP):__ After 16 rounds, the final result is permuted usin
 
 ## PROGRAM:
 ```c
-
-
 #include <stdio.h>
 #include <string.h>
 
@@ -76,13 +74,18 @@ int main()
 
     return 0;
 }
-    
+
+
+   
+
+
 
 
 ```
 
 ## RESULT:
-![Screenshot 2024-10-10 163537](https://github.com/user-attachments/assets/9f0e8b7a-a47e-4803-b522-d9d1271bf0b2)
+
+![Screenshot 2024-10-10 163910](https://github.com/user-attachments/assets/4625032c-b204-4ff7-8e37-62853d46c5bd)
 
 
 
