@@ -83,9 +83,12 @@ int main()
 
 ```
 
-## RESULT:
+## OUTPUT:
+![Screenshot 2024-10-17 094159](https://github.com/user-attachments/assets/938c60cc-ca69-4ed0-8dbb-33b0576ce967)
 
-![Screenshot 2024-10-10 163910](https://github.com/user-attachments/assets/4625032c-b204-4ff7-8e37-62853d46c5bd)
+## RESULT:
+The program to implement DES encryption and decryption is executed successully.
+
 
 
 
